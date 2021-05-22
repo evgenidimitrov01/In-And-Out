@@ -1,0 +1,32 @@
+﻿@model Expense
+
+<form method="post" asp-action="DeletePost">
+    <div class="border p-3">
+        <input asp-for="Id" hidden />
+        <h2 class="text-black-50 pl-3">Delete Expense</h2>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group row">
+                    <div class="col-6"> <label asp-for="ExpenseName"></label></div>
+                    <div class="col-6"> <label asp-for="Amount"></label></div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-6"><input asp-for="ExpenseName" disabled class="form-control" /> </div>
+                    <div class="col-6"><input asp-for="Amount" disabled class="form-control" /></div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-9 offset-3 row">
+                        <div class="col-4"> <input type="submit" class="btn btn-danger w-75" value="Delete" /></div>
+                        <div class="col-4"> <a class="btn btn-success w-75" asp-controller="Expense" asp-action="Index">Back</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
